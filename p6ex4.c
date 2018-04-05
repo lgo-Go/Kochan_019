@@ -31,9 +31,13 @@ int main(void)
 					else 
 						printf("= %.1f\n", accum/= x);
 					break;
+				case 'S':
+					accum = x;
+					printf("= %.1f\n", accum);
+					break;
 				default:
 					if(operator != 'E' && operator != 'S')
-						printf("operator error\n"); 
+						printf("operator error\n");
 			}
 		}
 	} else if(operator != 'S' && operator !='E')

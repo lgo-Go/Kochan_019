@@ -4,24 +4,28 @@
 
 int main(void)
 {
-	int des, ost, n = 1 ,i = 0;
-	int stroke[n];
+	int dec, ost, n = 1 ,i = 0;
+	char stroke[n];
 
 	printf("decimal number: ");
-	scanf("%i", &des);
-	while(des != 0)
+	scanf("%i", &dec);
+	while(dec != 0)
 	{
-		ost = des % 2;
-		stroke[i] = ost;
-		des = (des - ost) / 2;
-		ost = 0;
-		i++;
+		ost = dec % 2;
+		if(ost == 0)
+			stroke[i] = '0';
+		else
+			stroke[i] = '1';
+		dec = (dec - ost) / 2;
 		n++;
+		i++;
 	}
+	n++;
+	stroke[n - 1] = '\0';
 	printf("binary equivalent: ");
-	for(int i = n - 2; i >= 0 ; i--)
+	for(int i = n - 3; i >= 0 ; i--)
 	{
-		printf("%i", stroke[i]);
+		printf("%c", stroke[i]);
 	}
 	printf("\n");
 }
